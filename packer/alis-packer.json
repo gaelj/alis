@@ -33,7 +33,7 @@
           "./download-packer.sh \"{{.HTTPIP}}\" \"{{.HTTPPort}}\" {{user `config_file_sh`}}<enter><wait1s>",
           "./alis-packer-conf.sh<enter><wait1s>",
           "./alis-asciinema.sh<enter><wait20>",
-          "# loadkeys es<enter><wait1>",
+          "# loadkeys be-latin1<enter><wait1>",
           "less alis.conf<enter><wait3s><pageDown><wait3s><pageDown><wait3s><pageDown><wait3s><pageDown><wait3s><pageDown><wait3s><pageDown><wait3s>q<wait1s>",
           "./alis.sh<enter><wait1s>y<wait1s><enter>"
         ],
