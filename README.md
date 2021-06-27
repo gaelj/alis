@@ -120,8 +120,8 @@ After the base Arch Linux system is installed, alis can install packages with pa
 
 ```
 #                                  # After system installation start a user session
-# curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts
-# # curl -sL https://bit.ly/2F3CATp | bash                                                 # Alternative download URL with URL shortener
+loadkeys be-latin1
+curl -sL https://raw.githubusercontent.com/gaelj/alis/server/download.sh | bash     # Download alis scripts
 # ./alis-packages-asciinema.sh     # (Optional) Start asciinema video recording
 # vim alis-packages.conf           # Edit configuration and change variables values with your preferences (packages to install)
 # ./alis-packages.sh               # Start packages installation
