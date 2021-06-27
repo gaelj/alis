@@ -48,3 +48,9 @@ git clone https://gitlab.com/gaj-dotfiles/arch.git /home/gaj/
 
 su
 etckeeper init
+
+cd /etc || exit
+
+git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
+#git branch -m new-branch-name
+#git push --set-upstream origin new-branch-name
