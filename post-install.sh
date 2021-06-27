@@ -1,56 +1,51 @@
 #!/usr/bin/env bash
 
-su
+su -c mkdir /mnt/bau-fsarch-p01
+su -c mkdir /mnt/bau-fsarch-p01/tester_installation$
 
-mkdir /mnt/bau-fsarch-p01
-mkdir /mnt/bau-fsarch-p01/tester_installation$
+su -c mkdir /mnt/bau-omron-p01
+su -c mkdir /mnt/bau-omron-p01/Sharedata
 
-mkdir /mnt/bau-omron-p01
-mkdir /mnt/bau-omron-p01/Sharedata
+su -c mkdir /mnt/bau-omron-p02
+su -c mkdir /mnt/bau-omron-p02/Sharedata
 
-mkdir /mnt/bau-omron-p02
-mkdir /mnt/bau-omron-p02/Sharedata
+su -c mkdir /mnt/bau-yamaha-p01
+su -c mkdir /mnt/bau-yamaha-p01/WORK
 
-mkdir /mnt/bau-yamaha-p01
-mkdir /mnt/bau-yamaha-p01/WORK
+su -c mkdir /mnt/K
+su -c mkdir /mnt/arco-server
+su -c mkdir /mnt/NAS
+su -c mkdir /mnt/NAS/Gael
+su -c mkdir /mnt/NAS/Multimedia
 
-mkdir /mnt/K
-mkdir /mnt/arco-server
-mkdir /mnt/NAS
-mkdir /mnt/NAS/Gael
-mkdir /mnt/NAS/Multimedia
+su -c mkdir /mnt/p20165
+su -c mkdir /mnt/p20165/Share2
+su -c mkdir /mnt/p21760
+su -c mkdir /mnt/p21760/c$
 
-mkdir /mnt/p20165
-mkdir /mnt/p20165/Share2
-mkdir /mnt/p21760
-mkdir /mnt/p21760/c$
+su -c mkdir /mnt/plan_0000_2
+su -c mkdir /mnt/plan_3070_1
+su -c mkdir /mnt/plan_3070_1/c$
+su -c mkdir /mnt/plan_3070_2
+su -c mkdir /mnt/plan_3070_2/c$
+su -c mkdir /mnt/plan_3080
+su -c mkdir /mnt/plan_3080/c$
+su -c mkdir /mnt/plan_3080_2
+su -c mkdir /mnt/plan_3080_2/c$
+su -c mkdir /mnt/plan_3240_1
+su -c mkdir /mnt/plan_3240_1/c$
+su -c mkdir /mnt/svldocker101p
+su -c mkdir /mnt/svldocker101p
+su -c mkdir /mnt/svldocker101p/log
+su -c mkdir /mnt/svldocker101p/math-data
+su -c mkdir /mnt/webapps-te
+su -c mkdir /mnt/webapps-te/c$
 
-mkdir /mnt/plan_0000_2
-mkdir /mnt/plan_3070_1
-mkdir /mnt/plan_3070_1/c$
-mkdir /mnt/plan_3070_2
-mkdir /mnt/plan_3070_2/c$
-mkdir /mnt/plan_3080
-mkdir /mnt/plan_3080/c$
-mkdir /mnt/plan_3080_2
-mkdir /mnt/plan_3080_2/c$
-mkdir /mnt/plan_3240_1
-mkdir /mnt/plan_3240_1/c$
-mkdir /mnt/svldocker101p
-mkdir /mnt/svldocker101p
-mkdir /mnt/svldocker101p/log
-mkdir /mnt/svldocker101p/math-data
-mkdir /mnt/webapps-te
-mkdir /mnt/webapps-te/c$
-
-su gaj
 git clone https://gitlab.com/gaj-dotfiles/arch.git /home/gaj/
-
-su
-etckeeper init
 
 cd /etc || exit
 
-git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
-#git branch -m new-branch-name
-#git push --set-upstream origin new-branch-name
+su -c etckeeper init
+su -c git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
+#su -c git branch -m new-branch-name
+#su -c git push --set-upstream origin new-branch-name
