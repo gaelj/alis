@@ -619,6 +619,8 @@ function partition() {
         mkdir /mnt/boot
         mount -o "$PARTITION_OPTIONS_BOOT" "$PARTITION_BOOT" /mnt/boot
     fi
+    mkdir /mnt/srv
+    mount -o "$PARTITION_OPTIONS_BOOT" "/dev/nvme0n1p4" /mnt/srv
 
     # swap
     if [ -n "$SWAP_SIZE" ]; then
