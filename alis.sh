@@ -620,6 +620,17 @@ function partition() {
         mount -o "$PARTITION_OPTIONS_BOOT" "$PARTITION_BOOT" /mnt/boot
     fi
 
+    # extra mounts
+    mkdir /mnt/home
+    mount -o "$PARTITION_OPTIONS_ROOT" "/dev/sda4" /mnt/home
+
+    mkdir /mnt/mnt
+    mkdir /mnt/mnt/NTFS
+    mount -o "$PARTITION_OPTIONS_ROOT" "/dev/sda5" /mnt/mnt/NTFS
+
+    mkdir /mnt/mnt/EXT4
+    mount -o "$PARTITION_OPTIONS_ROOT" "/dev/sda6" /mnt/mnt/EXT4
+
     # swap
     if [ -n "$SWAP_SIZE" ]; then
         if [ "$FILE_SYSTEM_TYPE" == "btrfs" ]; then
