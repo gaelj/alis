@@ -25,3 +25,11 @@ su -c git commit -m "Initial commit"
 
 #su -c git branch -m new-branch-name
 #su -c git push --set-upstream origin new-branch-name
+
+su -c mkdir /mnt/HDD_8TB_1
+su -c mkdir /mnt/HDD_8TB_2
+su -c mkdir /mnt/RAID_2TB
+
+su -c mount /dev/sda1 /mnt/HDD_8TB_1
+su -c mount /dev/sdb1 /mnt/HDD_8TB_2
+su -c mount /dev/md127p1 /mnt/RAID_2TB
