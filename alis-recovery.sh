@@ -232,6 +232,7 @@ function facts() {
 }
 
 function check_facts() {
+    true;
 }
 
 function prepare() {
