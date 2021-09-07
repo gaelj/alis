@@ -1,82 +1,22 @@
 #!/usr/bin/env bash
 
+cd "$HOME" || exit
+su -c cp .git-credentials /root
+su -c cp .gitconfig /root
 
 cd /etc || exit
-
 paru -S etckeeper-git
-
 su -c etckeeper init
-su -c git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
-su -c git config --global user.email "gaeljames@gmail.com"
-su -c git config --global user.name "Gaël James (root)"
-
-git config --global user.email "gaeljames@gmail.com"
-git config --global user.name "Gaël James"
-
-su -c echo "*.bak" >> /etc/.gitignore
-su -c echo "*.backup" >> /etc/.gitignore
-su -c echo "*.OLD" >> /etc/.gitignore
-su -c echo "skel/*" >> /etc/.gitignore
-su -c echo "shadow*" >> /etc/.gitignore
-su -c echo ".updated" >> /etc/.gitignore
-
+{
+    su -c echo "*.bak"
+    "*.backup"
+    "*.OLD"
+    "skel/*"
+    "shadow*"
+    ".updated"
+} >> /.gitignore
+su -c git checkout -b portable2
 su -c git commit -m "Initial commit"
+su -c git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
+su -c git push --set-upstream origin portable2
 
-#su -c git branch -m new-branch-name
-#su -c git push --set-upstream origin new-branch-name
-
-su -c mkdir /mnt/HDD_8TB_1
-su -c mkdir /mnt/HDD_8TB_2
-su -c mkdir /mnt/RAID_2TB
-
-
-su -c mkdir /mnt/bau-fsarch-p01
-su -c mkdir /mnt/bau-fsarch-p01/tester_installation$
-
-su -c mkdir /mnt/bau-omron-p01
-su -c mkdir /mnt/bau-omron-p01/Sharedata
-
-su -c mkdir /mnt/bau-omron-p02
-su -c mkdir /mnt/bau-omron-p02/Sharedata
-
-su -c mkdir /mnt/bau-yamaha-p01
-su -c mkdir /mnt/bau-yamaha-p01/WORK
-
-su -c mkdir /mnt/K
-su -c mkdir /mnt/arco-server
-su -c mkdir /mnt/NAS
-su -c mkdir /mnt/NAS/Gael
-su -c mkdir /mnt/NAS/Multimedia
-
-su -c mkdir /mnt/p20165
-su -c mkdir /mnt/p20165/Share2
-su -c mkdir /mnt/p21760
-su -c mkdir /mnt/p21760/c$
-
-su -c mkdir /mnt/plan_0000_2
-su -c mkdir /mnt/plan_3070_1
-su -c mkdir /mnt/plan_3070_1/c$
-su -c mkdir /mnt/plan_3070_2
-su -c mkdir /mnt/plan_3070_2/c$
-su -c mkdir /mnt/plan_3080
-su -c mkdir /mnt/plan_3080/c$
-su -c mkdir /mnt/plan_3080_2
-su -c mkdir /mnt/plan_3080_2/c$
-su -c mkdir /mnt/plan_3240_1
-su -c mkdir /mnt/plan_3240_1/c$
-su -c mkdir /mnt/svldocker101p
-su -c mkdir /mnt/svldocker101p
-su -c mkdir /mnt/svldocker101p/log
-su -c mkdir /mnt/svldocker101p/math-data
-su -c mkdir /mnt/webapps-te
-su -c mkdir /mnt/webapps-te/c$
-
-git clone https://gitlab.com/gaj-dotfiles/arch.git /home/gaj/
-
-cd /etc || exit
-
-su -c etckeeper init
-
-git remote add origin https://gitlab.com/gaj-dotfiles/etckeeper.git
-git branch -m portable
-git push --set-upstream origin portable
